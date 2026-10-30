@@ -1,0 +1,97 @@
+Algoritmo "Monitoramento_Cesta_Basica"
+
+Variáveis
+    // Variáveis do Produto 1
+    prod1: Texto
+    preco_ant1, preco_at1, variacao1: Real
+    
+    // Variáveis do Produto 2
+    prod2: Texto
+    preco_ant2, preco_at2, variacao2: Real
+    
+    // Variáveis do Produto 3
+    prod3: Texto
+    preco_ant3, preco_at3, variacao3: Real
+
+Início
+    // -------------------------------------------------------------
+    // ENTRADA DE DADOS (Coleta sequencial via teclado)
+    // -------------------------------------------------------------
+    Escreva("Digite o nome do primeiro produto: ")
+    Leia(prod1)
+    Escreva("Digite o preço do mês anterior de ", prod1, ": R$ ")
+    Leia(preco_ant1)
+    Escreva("Digite o preço do mês atual de ", prod1, ": R$ ")
+    Leia(preco_at1)
+    
+    Escreva("Digite o nome do segundo produto: ")
+    Leia(prod2)
+    Escreva("Digite o preço do mês anterior de ", prod2, ": R$ ")
+    Leia(preco_ant2)
+    Escreva("Digite o preço do mês atual de ", prod2, ": R$ ")
+    Leia(preco_at2)
+    
+    Escreva("Digite o nome do terceiro produto: ")
+    Leia(prod3)
+    Escreva("Digite o preço do mês anterior de ", prod3, ": R$ ")
+    Leia(preco_ant3)
+    Escreva("Digite o preço do mês atual de ", prod3, ": R$ ")
+    Leia(preco_at3)
+
+    // -------------------------------------------------------------
+    // PROCESSAMENTO (Cálculo matemático das variações percentuais)
+    // -------------------------------------------------------------
+    variacao1 <- ((preco_at1 - preco_ant1) / preco_ant1) * 100
+    variacao2 <- ((preco_at2 - preco_ant2) / preco_ant2) * 100
+    variacao3 <- ((preco_at3 - preco_ant3) / preco_ant3) * 100
+
+    // -------------------------------------------------------------
+    // EXIBIÇÃO DOS RESULTADOS (Relatório de Diagnóstico Final)
+    // -------------------------------------------------------------
+    EscrevaL("=====================================================")
+    EscrevaL("        RELATÓRIO DE VARIAÇÃO DE PREÇOS")
+    EscrevaL("=====================================================")
+
+    // Análise Estruturada do Produto 1
+    EscrevaL("Produto: ", prod1)
+    EscrevaL("Variação Percentual: ", variacao1, "%")
+    Se (preco_at1 > preco_ant1) Entao
+        EscrevaL("STATUS: HOUVE AUMENTO DE PREÇO!")
+    Senao
+        Se (preco_at1 < preco_ant1) Entao
+            EscrevaL("STATUS: HOUVE REDUÇÃO DE PREÇO!")
+        Senao
+            EscrevaL("STATUS: MANUTENÇÃO DE PREÇO (Estável).")
+        FimSe
+    FimSe
+    EscrevaL("-----------------------------------------------------")
+
+    // Análise Estruturada do Produto 2
+    EscrevaL("Produto: ", prod2)
+    EscrevaL("Variação Percentual: ", variacao2, "%")
+    Se (preco_at2 > preco_ant2) Entao
+        EscrevaL("STATUS: HOUVE AUMENTO DE PREÇO!")
+    Senao
+        Se (preco_at2 < preco_ant2) Entao
+            EscrevaL("STATUS: HOUVE REDUÇÃO DE PREÇO!")
+        Senao
+            EscrevaL("STATUS: MANUTENÇÃO DE PREÇO (Estável).")
+        FimSe
+    FimSe
+    EscrevaL("-----------------------------------------------------")
+
+    // Análise Estruturada do Produto 3
+    EscrevaL("Produto: ", prod3)
+    EscrevaL("Variação Percentual: ", variacao3, "%")
+    Se (preco_at3 > preco_ant3) Entao
+        EscrevaL("STATUS: HOUVE AUMENTO DE PREÇO!")
+    Senao
+        Se (preco_at3 < preco_ant3) Entao
+            EscrevaL("STATUS: HOUVE REDUÇÃO DE PREÇO!")
+        Senao
+            EscrevaL("STATUS: MANUTENÇÃO DE PREÇO (Estável).")
+        FimSe
+    FimSe
+    
+    EscrevaL("=====================================================")
+FimAlgoritmo
