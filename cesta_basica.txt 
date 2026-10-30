@@ -46,52 +46,63 @@ Início
     variacao3 <- ((preco_at3 - preco_ant3) / preco_ant3) * 100
 
     // -------------------------------------------------------------
-    // EXIBIÇÃO DOS RESULTADOS (Relatório de Diagnóstico Final)
-    // -------------------------------------------------------------
-    EscrevaL("=====================================================")
-    EscrevaL("        RELATÓRIO DE VARIAÇÃO DE PREÇOS")
-    EscrevaL("=====================================================")
+// EXIBIÇÃO DOS RESULTADOS
+// -------------------------------------------------------------
 
-    // Análise Estruturada do Produto 1
-    EscrevaL("Produto: ", prod1)
-    EscrevaL("Variação Percentual: ", variacao1, "%")
-    Se (preco_at1 > preco_ant1) Entao
-        EscrevaL("STATUS: HOUVE AUMENTO DE PREÇO!")
-    Senao
-        Se (preco_at1 < preco_ant1) Entao
-            EscrevaL("STATUS: HOUVE REDUÇÃO DE PREÇO!")
-        Senao
-            EscrevaL("STATUS: MANUTENÇÃO DE PREÇO (Estável).")
-        FimSe
-    FimSe
-    EscrevaL("-----------------------------------------------------")
+EscrevaL("=====================================================")
+EscrevaL("        RELATÓRIO DE VARIAÇÃO DE PREÇOS")
+EscrevaL("=====================================================")
 
-    // Análise Estruturada do Produto 2
-    EscrevaL("Produto: ", prod2)
-    EscrevaL("Variação Percentual: ", variacao2, "%")
-    Se (preco_at2 > preco_ant2) Entao
-        EscrevaL("STATUS: HOUVE AUMENTO DE PREÇO!")
-    Senao
-        Se (preco_at2 < preco_ant2) Entao
-            EscrevaL("STATUS: HOUVE REDUÇÃO DE PREÇO!")
-        Senao
-            EscrevaL("STATUS: MANUTENÇÃO DE PREÇO (Estável).")
-        FimSe
-    FimSe
-    EscrevaL("-----------------------------------------------------")
+// Produto 1
+EscrevaL("Produto: ", prod1)
+EscrevaL("Preço anterior: R$ ", preco_ant1)
+EscrevaL("Preço atual: R$ ", preco_at1)
+EscrevaL("Variação percentual: ", variacao1, "%")
 
-    // Análise Estruturada do Produto 3
-    EscrevaL("Produto: ", prod3)
-    EscrevaL("Variação Percentual: ", variacao3, "%")
-    Se (preco_at3 > preco_ant3) Entao
-        EscrevaL("STATUS: HOUVE AUMENTO DE PREÇO!")
+Se (variacao1 > 0) Entao
+    EscrevaL("Situação: AUMENTO")
+Senao
+    Se (variacao1 < 0) Entao
+        EscrevaL("Situação: REDUÇÃO")
     Senao
-        Se (preco_at3 < preco_ant3) Entao
-            EscrevaL("STATUS: HOUVE REDUÇÃO DE PREÇO!")
-        Senao
-            EscrevaL("STATUS: MANUTENÇÃO DE PREÇO (Estável).")
-        FimSe
+        EscrevaL("Situação: ESTÁVEL")
     FimSe
-    
-    EscrevaL("=====================================================")
-FimAlgoritmo
+FimSe
+
+EscrevaL("-----------------------------------------------------")
+
+// Produto 2
+EscrevaL("Produto: ", prod2)
+EscrevaL("Preço anterior: R$ ", preco_ant2)
+EscrevaL("Preço atual: R$ ", preco_at2)
+EscrevaL("Variação percentual: ", variacao2, "%")
+
+Se (variacao2 > 0) Entao
+    EscrevaL("Situação: AUMENTO")
+Senao
+    Se (variacao2 < 0) Entao
+        EscrevaL("Situação: REDUÇÃO")
+    Senao
+        EscrevaL("Situação: ESTÁVEL")
+    FimSe
+FimSe
+
+EscrevaL("-----------------------------------------------------")
+
+// Produto 3
+EscrevaL("Produto: ", prod3)
+EscrevaL("Preço anterior: R$ ", preco_ant3)
+EscrevaL("Preço atual: R$ ", preco_at3)
+EscrevaL("Variação percentual: ", variacao3, "%")
+
+Se (variacao3 > 0) Entao
+    EscrevaL("Situação: AUMENTO")
+Senao
+    Se (variacao3 < 0) Entao
+        EscrevaL("Situação: REDUÇÃO")
+    Senao
+        EscrevaL("Situação: ESTÁVEL")
+    FimSe
+FimSe
+
+EscrevaL("=====================================================")
